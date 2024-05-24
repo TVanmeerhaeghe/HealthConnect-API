@@ -20,7 +20,7 @@ export default [
       semi: ['error', 'always'],
       quotes: ['error', 'single'],
       indent: ['error', 2],
-      'linebreak-style': ['error', 'windows'],
+      'linebreak-style': ['error', 'unix'],
       // 'no-console': 'off',
     },
   },
