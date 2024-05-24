@@ -1,5 +1,3 @@
-// eslint.config.mjs
-
 // import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 
@@ -11,6 +9,13 @@ export default [
   js.configs.recommended,
   {
     files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
+    languageOptions: {
+      globals: {
+        require: 'readonly',
+        process: 'readonly',
+        module: 'readonly',
+      },
+    },
     rules: {
       semi: ['error', 'always'],
       quotes: ['error', 'single'],
