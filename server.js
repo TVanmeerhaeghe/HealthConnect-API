@@ -11,15 +11,12 @@ app.get('/', (req, res) => {
   res.send('Welcome to the HealthConnect API!');
 });
 
-app.use((req, res, next) => {
-  res.status(404).send("Sorry, can't find that!");
+app.use((req, res) => {
+  res.status(404).send('Sorry, cannot find that!');
 });
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
+app.use((err, req, res) => {
   res.status(500).send('Something broke!');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, () => {});

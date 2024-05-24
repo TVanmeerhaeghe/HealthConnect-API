@@ -16,16 +16,12 @@ export default [
         module: 'readonly',
       },
     },
-    env: {
-      browser: true,
-      node: true,
-    },
     rules: {
       semi: ['error', 'always'],
       quotes: ['error', 'single'],
       indent: ['error', 2],
-      linebreakstyle: ['error', 'windows'],
-      'no-console': 'off',
+      'linebreak-style': ['error', 'windows'],
+      // 'no-console': 'off',
     },
   },
 ];
