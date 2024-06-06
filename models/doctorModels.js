@@ -1,8 +1,8 @@
-const db = require('../db');
+const db = require("../db");
 
 const getAllDoctors = () => {
   return new Promise((resolve, reject) => {
-    db.query('SELECT * FROM doctor', (error, results) => {
+    db.query("SELECT * FROM doctor", (error, results) => {
       if (error) {
         reject(error);
       } else {
@@ -15,7 +15,7 @@ const getAllDoctors = () => {
 const getDoctorById = (doctorId) => {
   return new Promise((resolve, reject) => {
     db.query(
-      'SELECT * FROM doctor WHERE id = ?',
+      "SELECT * FROM doctor WHERE id = ?",
       [doctorId],
       (error, results) => {
         if (error) {
@@ -32,7 +32,7 @@ const getDoctorById = (doctorId) => {
 
 const searchDoctors = (searchQuery) => {
   return new Promise((resolve, reject) => {
-    const query = 'SELECT * FROM doctor WHERE name LIKE ? OR specialty LIKE ?';
+    const query = "SELECT * FROM doctor WHERE name LIKE ? OR speciality LIKE ?";
     const searchValue = `%${searchQuery}%`;
     db.query(query, [searchValue, searchValue], (error, results) => {
       if (error) {

@@ -1,14 +1,14 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 const {
   getAllDoctors,
   getDoctorById,
   searchDoctors,
-} = require('../models/doctorModel');
+} = require("../models/doctorModels");
 
 router.use(express.json());
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const doctors = await getAllDoctors();
     res.json(doctors);
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   const doctorId = req.params.id;
   try {
     const doctor = await getDoctorById(doctorId);
@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.get('/search/:query', async (req, res) => {
+router.get("/search/:query", async (req, res) => {
   const searchQuery = req.params.query;
   try {
     const doctors = await searchDoctors(searchQuery);
